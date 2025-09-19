@@ -1,38 +1,198 @@
-.App {
-  text-align: center;
+/* ========= General Reset ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ========= Navbar ========= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #ff7043, #ff5722);
+  color: white;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #ffe0b2;
+  transform: scale(1.05);
+}
+
+/* ========= Landing Page ========= */
+.landing {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #ffcc80, #ff7043, #ff5722);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.landing h1 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.landing p {
+  font-size: 20px;
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+/* ========= Form Container ========= */
+.form-container {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #ff5722;
+}
+
+/* Inputs */
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.form-container input:focus {
+  border: 1px solid #ff7043;
+}
+
+/* Buttons */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #ff7043, #ff5722);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+  background: linear-gradient(90deg, #ff5722, #e64a19);
+  transform: translateY(-2px);
+}
+
+/* ========= Google Button ========= */
+.google-btn {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 8px;
+  background-color: #db4437;
+  margin-top: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.google-btn:hover {
+  background-color: #c23321;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ========= Divider ========= */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.divider span {
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+/* ========= Error Text ========= */
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  text-align: left;
+}
+
+/* ========= Responsive ========= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .landing h1 {
+    font-size: 36px;
+  }
+
+  .form-container {
+    margin: 40px 15px;
+    padding: 25px;
   }
 }
